@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, Arial, sans-serif;
+  background-color: hsl(225, 6%, 9%);
+  color: #d4dbe4;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+
+
+
+.dropdowns {
+  display: flex;
+  align-self: stretch;
+  color: #11181C;
+}
+.dropdown {
+  position: relative;
+  padding: 26px;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 8px;
+}
+.dropdown:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+.dropdown-button span {
+  font-size: 16px;
+  font-weight: 500;
+}
+.dropdown-button i {
+  font-size: 14px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 100%;
+  background-color: white;
+  display: none;
+}
+
+.dropdown-menu button {
+  padding: 12px 24px;
+}
+
+.dropdown-menu button:hover {
+  background-color: white;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px; /* Ajusta el margen a tu gusto */
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #afafaf;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .search-bar button {
+    padding: 10px;
+    background-color: #d6d5d5;
+    border: none;
+    border-radius: 4px;
+    color: #272727;
+    cursor: pointer;
+    margin-left: 5px; /* Ajusta la separaciÃ³n entre el input y el botÃ³n */
+  }
+  
+  .search-bar button:hover {
+    background-color: #b1b1b1;
+  }
+
+  .search-bar input[type="text"]::placeholder {
+    /* Estilo del texto del placeholder */
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 14px; /* TamaÃ±o de fuente */
+    color: #272727; /* Color del texto del placeholder */
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 80px;
+    padding: 0;
+    margin-left: 40px;
+  }
+  
+  .logo-img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .dropdown-menu button {
+    padding: 12px 24px;
+    background-color: white;
+  }
+
+  .dropdown-button {
+    background-color: var(--navbar-color);
+  }
