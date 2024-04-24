@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
 import ProductModal from "./ProductModal";
-import "./AllProducts.css";
+import "../src/Styles/AllProducts.css";
 
 const ProductList = () => {
   const [productModal, setProductModal] = useState(false); 
