@@ -1,11 +1,20 @@
-import '../Styles/Header.css'
-import logo from '../assets/404-logo.svg'
-import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import '../Styles/Header.css';
+import logo from '../assets/404-logo.svg';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
+
 const Header = () => {
+  const { logout } = useContext(AuthContext); // Obtén la función logout del contexto
+
   return (
     <nav className='nav-container'>
       <div className="logo">
-       <Link to="/"> <div className='logo-img'><img src={logo} alt="Logo" /></div> </Link>
+        <Link to="/"> 
+          <div className='logo-img'>
+            <img src={logo} alt="Logo" />
+          </div> 
+        </Link>
       </div>
       <div className="search-bar">
         <input type="text" placeholder="¿Qué estás buscando?" />
@@ -43,14 +52,14 @@ const Header = () => {
         </div>
         <div className="dropdown">
           <button className="dropdown-button">
-            <span>Cuenta</span>
+            <span>Mi Cuenta</span>
             <i className="bi bi-chevron-down"></i>
           </button>
           <div className="dropdown-menu">
-            <button>Usuario</button>
-            <button>Favoritos</button>
-            <button>Compras</button>
-            <button>Ventas</button>
+            <Link to="/login"><button>Login</button></Link>
+            <button>Historial de Compras</button>
+            <button>Mis Datos</button>
+            <button onClick={logout}>LogOut</button>
           </div>
         </div>
       </div>
