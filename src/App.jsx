@@ -1,7 +1,8 @@
 
-
-export const App = () => {
+const App = () => {
   return (
-    <div>App</div>
+    <div>AQUI VA LA LANDING</div>
   )
 }
+
+export default App

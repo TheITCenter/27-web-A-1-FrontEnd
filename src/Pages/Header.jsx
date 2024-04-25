@@ -1,11 +1,11 @@
 import '../Styles/Header.css'
 import logo from '../assets/404-logo.svg'
-
+import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <nav className='nav-container'>
       <div className="logo">
-       <div className='logo-img'><img src={logo} alt="Logo" /></div>
+       <Link to="/"> <div className='logo-img'><img src={logo} alt="Logo" /></div> </Link>
       </div>
       <div className="search-bar">
         <input type="text" placeholder="¿Qué estás buscando?" />
@@ -30,11 +30,11 @@ const Header = () => {
         </div>
         <div className="dropdown">
           <button className="dropdown-button">
-            <span>Productos</span>
+            <Link to="/products"><span>Todos los productos</span></Link>
             <i className="bi bi-chevron-down"></i>
           </button>
           <div className="dropdown-menu">
-            <button>Gadgets</button>
+            <Link to="/products/gadgets"><button >Gadgets</button></Link>
             <button>Mobile</button>
             <button>Computadoras</button>
             <button>Tablets</button>
