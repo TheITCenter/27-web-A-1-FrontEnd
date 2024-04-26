@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode';
 
 const App = () => {
-  const [userName, setUserName] = useState('');
+  const [name, setName] = useState('');
 
   useEffect(() => { //OJO aqui puse un useEffect para que se modifique la renderizacion del componente y nos traiga el nombre de usuario  
     
@@ -11,8 +11,8 @@ const App = () => {
       try {
         const decodedToken = jwtDecode(token); 
         if (decodedToken) {
-          const { userName } = decodedToken; 
-          setUserName(userName); 
+          const { name } = decodedToken; 
+          setName(name); 
         }
       } catch (error) {
         console.error('Error al decodificar el token:', error);
@@ -22,8 +22,8 @@ const App = () => {
 
   return (
     <div>
-      {userName ? (
-        <div>Bienvenido {userName}</div>
+      {name ? (
+        <div>Bienvenido {name}</div>
       ) : (
         <div>AQUI VA LA LANDING</div>
       )}
