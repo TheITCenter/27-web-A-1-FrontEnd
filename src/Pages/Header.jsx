@@ -1,19 +1,19 @@
-import { useContext } from 'react';
-import '../Styles/Header.css';
-import logo from '../assets/404-logo.svg';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
+import { useContext } from "react";
+import "../Styles/Header.css";
+import logo from "../assets/404-logo.svg";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 
 const Header = () => {
   const { logout } = useContext(AuthContext); // Obtén la función logout del contexto
 
   return (
-    <nav className='nav-container'>
+    <nav className="nav-container">
       <div className="logo">
-        <Link to="/"> 
-          <div className='logo-img'>
+        <Link to="/">
+          <div className="logo-img">
             <img src={logo} alt="Logo" />
-          </div> 
+          </div>
         </Link>
       </div>
       <div className="search-bar">
@@ -39,15 +39,30 @@ const Header = () => {
         </div>
         <div className="dropdown">
           <button className="dropdown-button">
-            <Link to="/products"><span>Todos los productos</span></Link>
+            <Link to="/products">
+              <span>Todos los productos</span>
+            </Link>
             <i className="bi bi-chevron-down"></i>
           </button>
           <div className="dropdown-menu">
-            <Link to="/products/gadgets"><button >Gadgets</button></Link>
-            <button>Mobile</button>
-            <button>Computadoras</button>
-            <button>Tablets</button>
-            <button>Consolas</button>
+            <Link to="/products/gadgets">
+              <button>Gadgets</button>
+            </Link>
+            <Link to="/products/consolas">
+              <button>Consolas</button>
+            </Link>
+            <Link to="/products/mobile">
+              <button>Mobile</button>
+            </Link>
+            <Link to="/products/monitors">
+              <button>Monitors</button>
+            </Link>
+            <Link to="/products/tablets">
+              <button>Tablets</button>
+            </Link>
+            <Link to="/products/pc">
+              <button>PC</button>
+            </Link>
           </div>
         </div>
         <div className="dropdown">
@@ -56,7 +71,9 @@ const Header = () => {
             <i className="bi bi-chevron-down"></i>
           </button>
           <div className="dropdown-menu">
-            <Link to="/login"><button>Login</button></Link>
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
             <button>Historial de Compras</button>
             <button>Mis Datos</button>
             <button onClick={logout}>LogOut</button>
