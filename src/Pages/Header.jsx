@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 const Header = () => {
-  const { logout } = useContext(AuthContext); // Obtén la función logout del contexto
+  const { logout, isAuthenticated } = useContext(AuthContext);
 
   return (
     <nav className="nav-container">
@@ -40,22 +40,44 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="dropdown">
-        <span className="dropdown-button">
-        <Link to="/products">
-            Todos los productos
-          </Link>
+          <span className="dropdown-button">
+            <Link to="/products">Todos los productos</Link>
           </span>
-          
+
           <div className="dropdown-menu">
             <ul>
-              <li><Link to="/products/gadgets" className="dropdown-link">Gadgets</Link></li>
-              <li><Link to="/products/consolas" className="dropdown-link">Consolas</Link></li>
-              <li><Link to="/products/mobile" className="dropdown-link">Mobile</Link></li>
-              <li><Link to="/products/monitors" className="dropdown-link">Monitors</Link></li>
-              <li><Link to="/products/tablets" className="dropdown-link">Tablets</Link></li>
-              <li><Link to="/products/pc" className="dropdown-link">PC</Link></li>
+              <li>
+                <Link to="/products/gadgets" className="dropdown-link">
+                  Gadgets
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/consolas" className="dropdown-link">
+                  Consolas
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/mobile" className="dropdown-link">
+                  Mobile
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/monitors" className="dropdown-link">
+                  Monitors
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/tablets" className="dropdown-link">
+                  Tablets
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/pc" className="dropdown-link">
+                  PC
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -67,10 +89,23 @@ const Header = () => {
           </span>
           <div className="dropdown-menu">
             <ul>
-              <li><Link to="/login" className="dropdown-link">Login</Link></li>
-              <li className="dropdown-link">Historial de Compras</li>
-              <li className="dropdown-link">Mis Datos</li>
-              <li onClick={logout} className="dropdown-link">LogOut</li>
+              {!isAuthenticated && (
+                <li>
+                  <Link to="/login" className="dropdown-link">
+                    Login
+                  </Link>
+                </li>
+              )}
+
+              {isAuthenticated && (
+                <>
+                  <li className="dropdown-link">Historial de Compras</li>
+                  <li className="dropdown-link">Mis Datos</li>
+                  <li onClick={logout} className="dropdown-link">
+                    Cerrar{" "}
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
