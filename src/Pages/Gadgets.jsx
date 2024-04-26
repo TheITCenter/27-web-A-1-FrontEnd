@@ -22,7 +22,7 @@ const Gadgets = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://api404notfound.onrender.com/products/gadgets"
+          "https://api404notfound.onrender.com/products/"
         );
         setProducts(response.data.products);
       } catch (error) {

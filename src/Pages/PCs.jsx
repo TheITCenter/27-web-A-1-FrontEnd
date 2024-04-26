@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import ProductModal from "../Components/ProductModal.jsx";
 import "../Styles/AllProducts.css";
 
-const Consolas = () => {
+const PCs = () => {
   const [productModal, setProductModal] = useState(false); 
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -22,7 +22,7 @@ const Consolas = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://api404notfound.onrender.com/products/"
+          "https://api404notfound.onrender.com/products"
         );
         setProducts(response.data.products);
       } catch (error) {
@@ -36,7 +36,7 @@ const Consolas = () => {
   return (
 <div className="card-container">
 {products
-  .filter((product) => product.category === "Consolas")
+  .filter((product) => product.category === "PC")
   .map((product) => (
     <Card style={{ width: "18rem" }} key={product._id}>
       <Card.Img
@@ -61,4 +61,4 @@ const Consolas = () => {
   );
 };
 
-export default Consolas;
+export default PCs;
