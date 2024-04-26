@@ -16,6 +16,7 @@ const Header = () => {
           </div>
         </Link>
       </div>
+      <h2>TU TIENDA EN LINEA 24 / 7</h2>
       <div className="search-bar">
         <input type="text" placeholder="¿Qué estás buscando?" />
         <button>
@@ -25,58 +26,52 @@ const Header = () => {
 
       <div className="dropdowns">
         <div className="dropdown">
-          <button className="dropdown-button">
-            <span>Ofertas</span>
+          <span className="dropdown-button">
+            Ofertas
             <i className="bi bi-chevron-down"></i>
-          </button>
+          </span>
           <div className="dropdown-menu">
-            <button>24 Hrs</button>
-            <button>Hot-Ofertas</button>
-            <button>Descuentos</button>
-            <button>Premium</button>
-            <button>Subastas</button>
+            <ul>
+              <li className="dropdown-link">24 Hrs</li>
+              <li className="dropdown-link">Hot-Ofertas</li>
+              <li className="dropdown-link">Descuentos</li>
+              <li className="dropdown-link">Premium</li>
+              <li className="dropdown-link">Subastas</li>
+            </ul>
           </div>
         </div>
+        
         <div className="dropdown">
-          <button className="dropdown-button">
-            <Link to="/products">
-              <span>Todos los productos</span>
-            </Link>
-            <i className="bi bi-chevron-down"></i>
-          </button>
+        <span className="dropdown-button">
+        <Link to="/products">
+            Todos los productos
+          </Link>
+          </span>
+          
           <div className="dropdown-menu">
-            <Link to="/products/gadgets">
-              <button>Gadgets</button>
-            </Link>
-            <Link to="/products/consolas">
-              <button>Consolas</button>
-            </Link>
-            <Link to="/products/mobile">
-              <button>Mobile</button>
-            </Link>
-            <Link to="/products/monitors">
-              <button>Monitors</button>
-            </Link>
-            <Link to="/products/tablets">
-              <button>Tablets</button>
-            </Link>
-            <Link to="/products/pc">
-              <button>PC</button>
-            </Link>
+            <ul>
+              <li><Link to="/products/gadgets" className="dropdown-link">Gadgets</Link></li>
+              <li><Link to="/products/consolas" className="dropdown-link">Consolas</Link></li>
+              <li><Link to="/products/mobile" className="dropdown-link">Mobile</Link></li>
+              <li><Link to="/products/monitors" className="dropdown-link">Monitors</Link></li>
+              <li><Link to="/products/tablets" className="dropdown-link">Tablets</Link></li>
+              <li><Link to="/products/pc" className="dropdown-link">PC</Link></li>
+            </ul>
           </div>
         </div>
+
         <div className="dropdown">
-          <button className="dropdown-button">
-            <span>Mi Cuenta</span>
+          <span className="dropdown-button">
+            Mi Cuenta
             <i className="bi bi-chevron-down"></i>
-          </button>
+          </span>
           <div className="dropdown-menu">
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
-            <button>Historial de Compras</button>
-            <button>Mis Datos</button>
-            <button onClick={logout}>LogOut</button>
+            <ul>
+              <li><Link to="/login" className="dropdown-link">Login</Link></li>
+              <li className="dropdown-link">Historial de Compras</li>
+              <li className="dropdown-link">Mis Datos</li>
+              <li onClick={logout} className="dropdown-link">LogOut</li>
+            </ul>
           </div>
         </div>
       </div>
