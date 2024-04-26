@@ -13,6 +13,7 @@ import Header from "./Pages/Header.jsx";
 import App from "./App.jsx";
 import { AuthProvider } from "./Context/AuthProvider.jsx";
 import "./index.css";
+import Footer from './Pages/Footer.jsx';
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -32,6 +33,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/products" element={<AllProducts />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+        <Footer />
       </AuthProvider>
     </Router>
   </React.StrictMode>
