@@ -1,0 +1,73 @@
+.hero {
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #454344;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #01ffc4dc;
+}
+
+.featured-products {
+    padding: 80px 0;
+}
+
+.featured-products h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
