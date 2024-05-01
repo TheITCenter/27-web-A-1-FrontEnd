@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "../Pages/AllProducts.jsx"; 
+import ModelCarrousel from "./ModelCarrousel.jsx";
 
 const ProductModal = ({ closeModal, product }) => {
   const closeModalButton = () => {
@@ -14,7 +15,7 @@ const ProductModal = ({ closeModal, product }) => {
       &times;
     </span>
     <h2 className="modal-title">{product.name}</h2>
-    <div>carrousel</div>
+    <div> <ModelCarrousel /> </div>
     <p className="modal-description">{product.description}</p>
     <button className="btn-primary">Comprar</button>
   </div>
