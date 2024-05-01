@@ -28,8 +28,8 @@ const Header = () => {
         <div className="dropdown">
           <span className="dropdown-button">
             <Link to="/products">Todos los productos</Link>
+            <i className="bi bi-chevron-down"></i>
           </span>
-
           <div className="dropdown-menu">
             <ul>
               <li>
@@ -68,30 +68,26 @@ const Header = () => {
 
         <div className="dropdown">
           <span className="dropdown-button">
-            Mi Cuenta
+            {isAuthenticated ? (
+              "Mi Cuenta"
+            ) : (
+              <Link to="/login" className="dropdown-link">
+                Iniciar Sesión
+              </Link>
+            )}
             <i className="bi bi-chevron-down"></i>
           </span>
-          <div className="dropdown-menu">
-            <ul>
-              {!isAuthenticated && (
-                <li>
-                  <Link to="/login" className="dropdown-link">
-                    Login
-                  </Link>
+          {isAuthenticated && (
+            <div className="dropdown-menu">
+              <ul>
+                <li className="dropdown-link">Historial de Compras</li>
+                <li className="dropdown-link">Mis Datos</li>
+                <li onClick={logout} className="dropdown-link">
+                  Cerrar sesión
                 </li>
-              )}
-
-              {isAuthenticated && (
-                <>
-                  <li className="dropdown-link">Historial de Compras</li>
-                  <li className="dropdown-link">Mis Datos</li>
-                  <li onClick={logout} className="dropdown-link">
-                    Cerrar sesión
-                  </li>
-                </>
-              )}
-            </ul>
-          </div>
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </nav>
@@ -99,3 +95,4 @@ const Header = () => {
 };
 
 export default Header;
+
