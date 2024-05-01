@@ -13,7 +13,7 @@ import Header from "./Pages/Header.jsx";
 import App from "./App.jsx";
 import { AuthProvider } from "./Context/AuthProvider.jsx";
 import "./index.css";
-import Footer from './Pages/Footer.jsx';
+import Footer from "./Pages/Footer.jsx";
 import Register from "./Pages/Register.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -30,10 +30,9 @@ createRoot(document.getElementById("root")).render(
           <Route path="/products/monitors" element={<Monitors />} />
           <Route path="/products/tablets" element={<Tablets />} />
           <Route path="/products/pc" element={<PCs />} />
-
+          <Route path="/register" element={<Register />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </AuthProvider>
