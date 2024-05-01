@@ -14,6 +14,7 @@ import App from "./App.jsx";
 import { AuthProvider } from "./Context/AuthProvider.jsx";
 import "./index.css";
 import Footer from './Pages/Footer.jsx';
+import Register from "./Pages/Register.jsx";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -32,6 +33,7 @@ createRoot(document.getElementById("root")).render(
 
           <Route path="/products" element={<AllProducts />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </AuthProvider>
