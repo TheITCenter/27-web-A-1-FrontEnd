@@ -43,11 +43,14 @@ export const AuthProvider = ({ children }) => {
         "https://api404notfound.onrender.com/auth/register",
         formData
       );
-      localStorage.setItem("token", data.token);
+
       if (data?.token) {
-        setToken(data.token);
-        setUser(jwtDecode(data.token));
-        setIsAuthenticated(true);
+        Swal.fire({
+          title: "Cuenta creada exitosamente",
+          text: "Favor de iniciar sesión",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
         navigate("/login");
       }
     } catch (error) {
