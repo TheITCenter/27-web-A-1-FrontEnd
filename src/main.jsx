@@ -16,11 +16,15 @@ import "./index.css";
 import Footer from "./Pages/Footer.jsx";
 import Register from "./Pages/Register.jsx";
 
+
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <Header />
+     
+      
+       <AuthProvider>
+       <Header /> 
+       
         <Routes>
           <Route exact path="/" element={<App />} />
           <Route path="*" element={<App />} />
@@ -34,8 +38,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/products" element={<AllProducts />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-        <Footer />
-      </AuthProvider>
+        <Footer /> 
+      </AuthProvider> 
     </Router>
   </React.StrictMode>
 );

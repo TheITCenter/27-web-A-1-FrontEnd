@@ -1,15 +1,19 @@
-
 .footer {
-    background-color:  black;
-    padding:0;
-    width: 100vw;
-  }
+  background-color: black;
+  padding: 0 !important;
+  width: 100%;
+ bottom: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  
+}
+
   .footer small {
     color:#01ffc477;
   }
   
   .footer-container {
-    /* max-width: 1200px; */
+   
     margin: 0 auto;
     padding: 0 1rem;
   }

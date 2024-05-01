@@ -86,8 +86,9 @@ button {
     display: flex;
     align-items: center;
     margin-left: auto;
-    margin-right: 20px; /* Ajusta el margen a tu gusto */
+    
   }
+  
   
   .search-bar input[type="text"] {
     padding: 10px;
@@ -124,7 +125,8 @@ button {
     width: 120px;
     height: 80px;
     padding: 0;
-    margin-left: 40px;
+    margin-left: 25px;
+    margin-right: 40px;
   }
   
   .logo-img {
@@ -201,9 +203,15 @@ button {
   text-decoration: none;
   color: black;
 }
+.cart-icon {
+  width: 24px; /* Define el ancho deseado */
+  height: 24px; /* Define el alto deseado */
+  
+  margin-left: 20px;
+  margin-right: 25px;
+}
 
-
-  
-  
-  
-  
+.cart-icon img {
+  width: 24px;
+  height: 24px;
+}

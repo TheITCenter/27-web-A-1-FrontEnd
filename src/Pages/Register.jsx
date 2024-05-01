@@ -39,7 +39,7 @@ function Register() {
   };
 
   return (
-    <div className="form-wrapper">
+    <div className="form-wrapper-register">
       <main className="form-side">
         <form className="my-form" onSubmit={handleSubmit}>
           <div className="form-welcome-row">
