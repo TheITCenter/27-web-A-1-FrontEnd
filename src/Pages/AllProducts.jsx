@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import ProductModal from "../Components/ProductModal.jsx";
 import "../Styles/AllProducts.css";
 
@@ -47,7 +47,7 @@ const AllProducts = () => {
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>Precio: $ {product.price.toLocaleString()}</Card.Text>
-        <Button variant="primary">Añadir al carrito</Button>
+        <button className="btn-primary">Anadir al Carrito</button>
       </Card.Body>
     </Card>
   ))}

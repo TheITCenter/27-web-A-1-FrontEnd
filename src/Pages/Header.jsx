@@ -27,22 +27,6 @@ const Header = () => {
       <div className="dropdowns">
         <div className="dropdown">
           <span className="dropdown-button">
-            Ofertas
-            <i className="bi bi-chevron-down"></i>
-          </span>
-          <div className="dropdown-menu">
-            <ul>
-              <li className="dropdown-link">24 Hrs</li>
-              <li className="dropdown-link">Hot-Ofertas</li>
-              <li className="dropdown-link">Descuentos</li>
-              <li className="dropdown-link">Premium</li>
-              <li className="dropdown-link">Subastas</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="dropdown">
-          <span className="dropdown-button">
             <Link to="/products">Todos los productos</Link>
           </span>
 
@@ -102,7 +86,7 @@ const Header = () => {
                   <li className="dropdown-link">Historial de Compras</li>
                   <li className="dropdown-link">Mis Datos</li>
                   <li onClick={logout} className="dropdown-link">
-                    Cerrar{" "}
+                    Cerrar sesión
                   </li>
                 </>
               )}
