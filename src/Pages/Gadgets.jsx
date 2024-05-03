@@ -3,6 +3,8 @@ import axios from "axios";
 import { Card } from "react-bootstrap";
 import ProductModal from "../Components/ProductModal.jsx";
 import "../Styles/AllProducts.css";
+import { useContext } from 'react';
+import { CartContext } from '../Context/CartContext.jsx';
 
 const Gadgets = () => {
   const [productModal, setProductModal] = useState(false); 
@@ -17,6 +19,9 @@ const Gadgets = () => {
   const closeModal = () => {
     setProductModal(false); 
   };
+
+  const { addToCart } = useContext(CartContext);
+  console.log(addToCart);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +54,7 @@ const Gadgets = () => {
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>Precio: $ {product.price.toLocaleString()}</Card.Text>
-        <button className="btn-primary">Anadir al Carrito</button>
+        <button className="btn-primary" onClick={() => addToCart(product)}>Añadir al Carrito</button>
       </Card.Body>
     </Card>
   ))}

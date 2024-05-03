@@ -1,11 +1,16 @@
-import { useContext } from "react";
+
 import "../Styles/Header.css";
 import logo from "../assets/404-logo.svg";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
+import cart from "../assets/cart.svg";
+import { useContext, useState } from "react";
+
+import CartModal from "../Components/CartModal";
 
 const Header = () => {
   const { logout, isAuthenticated } = useContext(AuthContext);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
   return (
     <nav className="nav-container">
@@ -89,6 +94,10 @@ const Header = () => {
             </div>
           )}
         </div>
+        <div onClick={() => setIsCartModalOpen(true)}>
+  <img className="cart" src={cart} alt="cart-svg" />
+</div>
+{isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />}
       </div>
     </nav>
   );

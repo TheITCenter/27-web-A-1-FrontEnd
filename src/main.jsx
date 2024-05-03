@@ -12,6 +12,7 @@ import Login from "../src/Pages/Login.jsx";
 import Header from "./Pages/Header.jsx";
 import App from "./App.jsx";
 import { AuthProvider } from "./Context/AuthProvider.jsx";
+import { CartProvider } from './Context/CartContext.jsx';
 import "./index.css";
 import Footer from "./Pages/Footer.jsx";
 import Register from "./Pages/Register.jsx";
@@ -19,27 +20,29 @@ import Register from "./Pages/Register.jsx";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
-     
-      
-       <AuthProvider>
-       <Header /> 
-       
-        <Routes>
-          <Route exact path="/" element={<App />} />
-          <Route path="*" element={<App />} />
-          <Route path="/products/gadgets" element={<Gadgets />} />
-          <Route path="/products/consolas" element={<Consolas />} />
-          <Route path="/products/mobile" element={<Mobile />} />
-          <Route path="/products/monitors" element={<Monitors />} />
-          <Route path="/products/tablets" element={<Tablets />} />
-          <Route path="/products/pc" element={<PCs />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/products" element={<AllProducts />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-        <Footer /> 
-      </AuthProvider> 
-    </Router>
+  <React.StrictMode>
+<Router>
+  <AuthProvider>
+    <CartProvider>
+    <Header /> 
+       <Routes>
+         <Route exact path="/" element={<App />} />
+         <Route path="*" element={<App />} />
+         <Route path="/products/gadgets" element={<Gadgets />} />
+         <Route path="/products/consolas" element={<Consolas />} />
+         <Route path="/products/mobile" element={<Mobile />} />
+         <Route path="/products/monitors" element={<Monitors />} />
+         <Route path="/products/tablets" element={<Tablets />} />
+         <Route path="/products/pc" element={<PCs />} />
+         <Route path="/register" element={<Register />} />
+         <Route path="/products" element={<AllProducts />} />
+         <Route path="/login" element={<Login />} />
+       </Routes>
+       <Footer /> 
+    </CartProvider>
+  </AuthProvider>
+</Router>
+</React.StrictMode>
   </React.StrictMode>
 );
+
