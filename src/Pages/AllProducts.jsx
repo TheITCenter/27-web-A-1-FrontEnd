@@ -4,6 +4,8 @@ import { Card } from "react-bootstrap";
 import ProductModal from "../Components/ProductModal.jsx";
 import { useContext } from 'react';
 import { CartContext } from '../Context/CartContext.jsx';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../Styles/AllProducts.css";
 
 const AllProducts = () => {
@@ -21,8 +23,11 @@ const AllProducts = () => {
   };
 
   const { addToCart } = useContext(CartContext);
-  console.log(addToCart);
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    toast(`Se ha agregado ${product.name} al carrito`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,28 +45,29 @@ const AllProducts = () => {
   }, []);
 
   return (
-<div className="card-container">
-  {products.map((product) => (
-    <Card style={{ width: "18rem" }} key={product._id}>
-      <Card.Img
-        variant="top"
-        src={product.image}
-        alt={product.name}
-        style={{ maxWidth: "200px" }}
-        onClick={() => openModal(product)} 
-      />
-      <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
-        <Card.Text>Precio: $ {product.price.toLocaleString()}</Card.Text>
-        <button className="btn-primary" onClick={() => addToCart(product)}>Añadir al Carrito</button>
-      </Card.Body>
-    </Card>
-  ))}
+    <div className="card-container">
+      {products.map((product) => (
+        <Card style={{ width: "18rem" }} key={product._id}>
+          <Card.Img
+            variant="top"
+            src={product.image}
+            alt={product.name}
+            style={{ maxWidth: "200px" }}
+            onClick={() => openModal(product)} 
+          />
+          <Card.Body>
+            <Card.Title>{product.name}</Card.Title>
+            <Card.Text>Precio: $ {product.price.toLocaleString()}</Card.Text>
+            <button className="btn-primary" onClick={() => handleAddToCart(product)}>Añadir al Carrito</button>
+          </Card.Body>
+        </Card>
+      ))}
 
-  {productModal && selectedProduct && (
-    <ProductModal closeModal={closeModal} product={selectedProduct} />
-  )}
-</div>
+      {productModal && selectedProduct && (
+        <ProductModal closeModal={closeModal} product={selectedProduct} />
+      )}
+      <ToastContainer />
+    </div>
   );
 };
 

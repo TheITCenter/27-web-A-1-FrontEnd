@@ -16,11 +16,14 @@ import { CartProvider } from './Context/CartContext.jsx';
 import "./index.css";
 import Footer from "./Pages/Footer.jsx";
 import Register from "./Pages/Register.jsx";
+import { HistorialCompras } from "./Pages/HistorialCompras.jsx";
+import { ToastContainer } from 'react-toastify';
 
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
   <React.StrictMode>
+  <ToastContainer />
 <Router>
   <AuthProvider>
     <CartProvider>
@@ -37,6 +40,7 @@ createRoot(document.getElementById("root")).render(
          <Route path="/register" element={<Register />} />
          <Route path="/products" element={<AllProducts />} />
          <Route path="/login" element={<Login />} />
+         <Route path="/myorders" element={<HistorialCompras />} />
        </Routes>
        <Footer /> 
     </CartProvider>

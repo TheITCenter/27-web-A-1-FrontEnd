@@ -1,4 +1,3 @@
-
 import "../Styles/Header.css";
 import logo from "../assets/404-logo.svg";
 import { Link } from "react-router-dom";
@@ -85,7 +84,11 @@ const Header = () => {
           {isAuthenticated && (
             <div className="dropdown-menu">
               <ul>
-                <li className="dropdown-link">Historial de Compras</li>
+                <li>
+                  <Link to="/myorders" className="dropdown-link">
+                    Mis Compras
+                  </Link>
+                </li>
                 <li className="dropdown-link">Mis Datos</li>
                 <li onClick={logout} className="dropdown-link">
                   Cerrar sesión
@@ -95,13 +98,14 @@ const Header = () => {
           )}
         </div>
         <div onClick={() => setIsCartModalOpen(true)}>
-  <img className="cart" src={cart} alt="cart-svg" />
-</div>
-{isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />}
+          <img className="cart" src={cart} alt="cart-svg" />
+        </div>
+        {isCartModalOpen && (
+          <CartModal onClose={() => setIsCartModalOpen(false)} />
+        )}
       </div>
     </nav>
   );
 };
 
 export default Header;
-
