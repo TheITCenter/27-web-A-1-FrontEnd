@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Card } from "react-bootstrap";
 import ProductModal from "../Components/ProductModal.jsx";
-import { useContext } from 'react';
 import { CartContext } from '../Context/CartContext.jsx';
+import { SearchTermContext } from '../Context/SearchContext.jsx';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../Styles/AllProducts.css";
@@ -13,6 +13,9 @@ const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+  const { searchTerm } = useContext(SearchTermContext);
+  const { addToCart } = useContext(CartContext);
+
   const openModal = (product) => {
     setSelectedProduct(product);
     setProductModal(true); 
@@ -21,8 +24,6 @@ const AllProducts = () => {
   const closeModal = () => {
     setProductModal(false); 
   };
-
-  const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = (product) => {
     addToCart(product);
@@ -44,9 +45,13 @@ const AllProducts = () => {
     fetchData();
   }, []);
 
+  const filteredProducts = products.filter(product =>
+    (product.name.toLowerCase().includes(searchTerm.toLowerCase()) || product.category.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
   return (
     <div className="card-container">
-      {products.map((product) => (
+      {filteredProducts.map((product) => (
         <Card style={{ width: "18rem" }} key={product._id}>
           <Card.Img
             variant="top"

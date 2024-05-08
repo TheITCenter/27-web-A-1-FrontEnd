@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import cart from "../assets/cart.svg";
 import { useContext, useState } from "react";
+import { SearchTermContext } from '../Context/SearchContext.jsx';
 
 import CartModal from "../Components/CartModal";
 
 const Header = () => {
   const { logout, isAuthenticated } = useContext(AuthContext);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+  const { searchTerm, handleSearchChange } = useContext(SearchTermContext);
 
   return (
     <nav className="nav-container">
@@ -22,10 +24,8 @@ const Header = () => {
       </div>
       <h2>TU TIENDA EN LINEA 24 / 7</h2>
       <div className="search-bar">
-        <input type="text" placeholder="¿Qué estás buscando?" />
-        <button>
-          <i className="bi bi-search"></i>
-        </button>
+        <input type="search" placeholder="Busca por nombre de producto o categoría..." value={searchTerm} onChange={handleSearchChange} />
+      
       </div>
 
       <div className="dropdowns">

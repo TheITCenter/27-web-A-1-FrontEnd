@@ -141,7 +141,9 @@ button {
   display: flex;
   align-items: center;
   margin-left: auto;
+  background-color: black;
 }
+
 
 .search-bar input[type="text"], .search-bar button {
   padding: 10px;
@@ -177,3 +179,4 @@ button {
   margin-left: 20px;
   margin-right: 25px;
 }
+
